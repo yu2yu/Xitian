@@ -12,14 +12,13 @@ public class RemoveElements {
         // 主要是删除头部之后
         ListNode node = new ListNode(0);
         node.next = head;
-        ListNode prev = node;
-        while (head != null){
-            if(head.val == val){
-                prev.next = head.next;
+        ListNode cur = node;
+        while (cur.next != null){
+            if(cur.val == val){
+                cur.next = cur.next.next;
             }else {
-                prev = head;
+                cur = cur.next;
             }
-            head = head.next;
         }
         return node.next;
     }
