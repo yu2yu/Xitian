@@ -20,6 +20,21 @@ public class ReverseList {
         return prev;
     }
 
+    /**
+     * 递归做法则为：从尾部开始递归，因为先调用方法，再进行处理
+     * @param head
+     * @return
+     */
+    public ListNode reverseListDG(ListNode head) {
+        if(head == null || head.next == null){
+            return head;
+        }
+        ListNode node = reverseListDG(head.next);
+        head.next.next = head;
+        head.next = null;
+        return node;
+    }
+
     @Test
     public void testReverseList(){
         ListNode headNode = ListNode.constructListNodes(new int[]{1, 2, 3, 4, 5});
