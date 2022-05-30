@@ -31,7 +31,7 @@ public class MinDeletionSize {
     }
 
     @Test
-    public void testPairSum(){
+    public void testMinDeletionSize(){
         assertEquals(1,minDeletionSize(new String[]{"cba","daf","ghi"}));
         assertEquals(0,minDeletionSize(new String[]{"a","b"}));
         assertEquals(3,minDeletionSize(new String[]{"zyx","wvu","tsr"}));
