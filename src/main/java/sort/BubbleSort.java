@@ -20,7 +20,7 @@ public class BubbleSort {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = 0; j < nums.length - 1 - i; j++) {
                 if(nums[j] > nums[j+1]){
-                    swap(j,j+1,nums);
+                    CommonUtil.swap(j,j+1,nums);
                 }
             }
             System.out.println("第"+ (i+1) + "轮排序，结果为：");
@@ -39,7 +39,7 @@ public class BubbleSort {
             boolean swapFlag = false;
             for (int j = 0; j < nums.length - 1 - i; j++) {
                 if(nums[j] > nums[j+1]){
-                    swap(j,j+1,nums);
+                    CommonUtil.swap(j,j+1,nums);
                     swapFlag = true;
                 }
             }
@@ -48,15 +48,6 @@ public class BubbleSort {
             if(!swapFlag) break;
         }
         return nums;
-    }
-
-
-    public void swap(int i,int j,int[] nums){
-        if(i != j){
-            int temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-        }
     }
 
 
